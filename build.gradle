@@ -1,0 +1,41 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.0'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'scala'
+}
+
+group = 'de.lionralfs'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '12'
+
+repositories {
+	mavenCentral()
+}
+
+
+configurations {
+   otelJarLocation
+}
+
+dependencies {
+	implementation 'org.scala-lang:scala-library:2.13.8'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.0'
+	implementation 'io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations:1.18.0-alpha'
+
+	otelJarLocation 'io.opentelemetry.javaagent:opentelemetry-javaagent:1.18.0'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+bootRun {
+	jvmArgs = [
+		"-javaagent:${configurations.otelJarLocation.singleFile}",
+		// "-Dotel.javaagent.debug=true",
+		"-Dotel.resource.attributes=service.name=springdemo",
+		"-Dotel.exporter.otlp.endpoint=http://localhost:8200",
+	]
+}
