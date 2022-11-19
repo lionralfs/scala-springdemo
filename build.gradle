@@ -24,7 +24,7 @@ dependencies {
 
 	otelJarLocation 'io.opentelemetry.javaagent:opentelemetry-javaagent:1.18.0'
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.5'
 }
 
 tasks.named('test') {
