@@ -22,7 +22,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.0'
 	implementation 'io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations:1.18.0-alpha'
 
-	otelJarLocation 'io.opentelemetry.javaagent:opentelemetry-javaagent:1.18.0'
+	otelJarLocation 'io.opentelemetry.javaagent:opentelemetry-javaagent:1.20.1'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.5'
 }
