@@ -20,7 +20,7 @@ configurations {
 dependencies {
 	implementation 'org.scala-lang:scala-library:2.13.10'
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.5'
-	implementation 'io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations:1.20.1'
+	implementation 'io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations:1.20.2'
 
 	otelJarLocation 'io.opentelemetry.javaagent:opentelemetry-javaagent:1.20.1'
 
