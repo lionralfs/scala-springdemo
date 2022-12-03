@@ -21,6 +21,11 @@ dependencies {
 	implementation 'org.scala-lang:scala-library:2.13.10'
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.5'
 	implementation 'io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations:1.20.1'
+	implementation 'org.mongodb:mongodb-driver-core:4.8.0' // for com.mongodb.internal.diagnostics.logging.Logger (ClassNotFoundException otherwise)
+	implementation 'org.mongodb:bson:4.8.0' // for org.bson.codecs.CollectionCodecProvider
+	implementation 'org.mongodb.scala:mongo-scala-bson_2.13:4.8.0' // scala bson
+	implementation 'org.mongodb.scala:mongo-scala-driver_2.13:4.8.0' // the driver itself
+	implementation 'org.mongodb:mongodb-driver-reactivestreams:4.8.0' // for org.reactivestreams.Publisher (This symbol is required by 'trait org.mongodb.scala.Observable'.)
 
 	otelJarLocation 'io.opentelemetry.javaagent:opentelemetry-javaagent:1.20.1'
 
