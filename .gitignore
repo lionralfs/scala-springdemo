@@ -42,3 +42,4 @@ out/
 .metals/
 elk/environment
 __pycache__/
+node_modules/

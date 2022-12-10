@@ -1,0 +1,14 @@
+{
+  "name": "loadtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "seedScript.js",
+  "type": "module",
+  "scripts": {
+    "seed": "node seedScript.js"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "mongodb": "^4.12.1"
+  }
+}
