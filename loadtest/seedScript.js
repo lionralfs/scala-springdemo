@@ -1,3 +1,5 @@
+// mostly taken from https://www.mongodb.com/developer/products/mongodb/seed-database-with-fake-data/
+
 import { faker } from '@faker-js/faker';
 import { MongoClient } from 'mongodb';
 
