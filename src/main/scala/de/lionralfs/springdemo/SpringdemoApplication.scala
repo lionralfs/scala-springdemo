@@ -8,7 +8,11 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.Bean
 import org.springframework.stereotype.Component
-import org.springframework.web.bind.annotation.{RequestMapping, RequestParam, RestController}
+import org.springframework.web.bind.annotation.{
+  RequestMapping,
+  RequestParam,
+  RestController
+}
 
 import scala.concurrent.duration.DurationInt
 import scala.concurrent.{Await, Future}
@@ -20,7 +24,7 @@ class Controller(db: MongoDatabase) {
   def hello(
       @RequestParam(value = "name", defaultValue = "World") name: String
   ): String = {
-    Await.result(insertIntoDB(name), 2.seconds)
+//    Await.result(insertIntoDB(name), 2.seconds)
 
     val query = db
       .getCollection("test-collection")
@@ -35,7 +39,8 @@ class Controller(db: MongoDatabase) {
           .map(_._2.asInstanceOf[BsonString].getValue)
           .getOrElse("UNKNOWN")
       })
-      .mkString("<br>")
+      .length
+      .toString
   }
 
   @WithSpan

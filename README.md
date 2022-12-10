@@ -1,6 +1,6 @@
 ### Starting a mongo
 
-`docker run -d -p 27099:27017 --name local-mongo mongo:6.0.3`
+`docker run -d -p 27099:27017 --name local-mongo mongo:5.0.13`
 
 ### Starting the ELK stack
 
